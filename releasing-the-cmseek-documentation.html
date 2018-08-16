@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>CMSeek Documentation</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/icomoon.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="Picky Tutorials, Research Writeups, Documentations, PoCs and much more..." />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="canonical" href="http://localhost:4000/releasing-the-cmseek-documentation" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Virtually Unvoid Defensive | Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CMSeek Documentation" />
+    <meta property="og:description" content="What is a CMS? A content management system (CMS) manages the creation and modification of digital content. It typically supports multiple users in a collaborative environment. Some noteable examples are: WordPress, Joomla, Drupal etc. Release History - Version 1.0.7 [07-08-2018] - Version 1.0.6 [23-07-2018] - Version 1.0.5 [19-07-2018] - Version" />
+    <meta property="og:url" content="http://localhost:4000/releasing-the-cmseek-documentation" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/ping.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/virtuallyunvoiddefensive" />
+    <meta property="article:author" content="https://www.facebook.com/virtuallyunvoiddefensive" />
+    <meta property="article:published_time" content="2018-08-10T17:30:00+05:30" />
+    <meta property="article:modified_time" content="2018-08-10T17:30:00+05:30" />
+    <meta property="article:tag" content="Documentation" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CMSeek Documentation" />
+    <meta name="twitter:description" content="What is a CMS? A content management system (CMS) manages the creation and modification of digital content. It typically supports multiple users in a collaborative environment. Some noteable examples are: WordPress, Joomla, Drupal etc. Release History - Version 1.0.7 [07-08-2018] - Version 1.0.6 [23-07-2018] - Version 1.0.5 [19-07-2018] - Version" />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/ping.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Virtually Unvoid Defensive | Blog" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Documentation" />
+    <meta name="twitter:site" content="@virtuallyunvoid" />
+    <meta name="twitter:creator" content="@virtuallyunvoid" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Virtually Unvoid Defensive | Blog",
+        "logo": "http://localhost:4000/assets/images/l0g0.png"
+    },
+    "url": "http://localhost:4000/releasing-the-cmseek-documentation",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000/assets/images/ping.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000/releasing-the-cmseek-documentation"
+    },
+    "description": "What is a CMS? A content management system (CMS) manages the creation and modification of digital content. It typically supports multiple users in a collaborative environment. Some noteable examples are: WordPress, Joomla, Drupal etc. Release History - Version 1.0.7 [07-08-2018] - Version 1.0.6 [23-07-2018] - Version 1.0.5 [19-07-2018] - Version"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="CMSeek Documentation" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+        <div class="site-nav-left">
+                
+                    <a class="site-nav-logo" href="https://vudefensive.ml"><img src="/assets/images/l0g0.png" alt="Virtually Unvoid Defensive | Blog" /> </a>
+                
+        </div>
+        <div class="site-nav-right">
+            
+                <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="https://vudefensive.ml">Home</a></li>
+    <li class="nav-blog" role="menuitem"><a href="https://blog.vudefensive.ml">Blog</a></li>
+    <li class="nav-projects" role="menuitem"><a href="https://projects.vudefensive.ml">Projects</a></li>
+    <li class="nav-about" role="menuitem"><a href="https://team.vudefensive.ml">About</a></li>
+</ul>
+
+            
+            <!---->
+        </div>
+    </nav>
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post ">
+
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/ping.jpg)">
+            </figure>
+            
+
+            <section class="post-full-content">
+                    <header class="post-full-header">
+                        <section class="post-full-meta">
+                            <time class="post-full-meta-date" datetime="10 August 2018">10 August 2018</time>
+                            
+                                <span class="date-divider">/</span>
+                                
+                                    
+                                       <a href='/tag/documentation/'>DOCUMENTATION</a>
+                                    
+                                
+                            
+                        </section>
+                        <h1 class="post-full-title">CMSeek Documentation</h1>
+                    </header>
+                <div class="kg-card-markdown">
+
+                    <p align="center">
+  <img src="https://i.imgur.com/n2U6nVH.png" alt="Logo" /> <br />
+  <img src="https://img.shields.io/badge/Version-1.0.7-brightgreen.svg?style=style=flat-square" alt="version" />
+  <img src="https://img.shields.io/badge/python-3-orange.svg?style=style=flat-square" alt="Python Version" />
+  <img src="https://img.shields.io/aur/license/yaourt.svg?style=style=flat-square" alt="License" />
+</p>
+
+<h2 id="what-is-a-cms">What is a CMS?</h2>
+<blockquote>
+  <p>A content management system (CMS) manages the creation and modification of digital content. It typically supports multiple users in a collaborative environment. Some noteable examples are: <em>WordPress, Joomla, Drupal etc</em>.</p>
+</blockquote>
+
+<h2 id="release-history">Release History</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Version 1.0.7 [07-08-2018]
+- Version 1.0.6 [23-07-2018]
+- Version 1.0.5 [19-07-2018]
+- Version 1.0.4 [17-07-2018]
+- Version 1.0.3 [06-07-2018]
+- Version 1.0.2 [06-07-2018]
+- Version 1.0.1 [19-06-2018]
+- Version 1.0.0 [15-06-2018]
+</code></pre></div></div>
+<p><a href="https://github.com/Tuhinshubhra/CMSeeK/blob/master/CHANGELOG">Changelog File</a></p>
+
+<h2 id="functions-of-cmseek">Functions Of CMSeek:</h2>
+<ul>
+  <li>Basic CMS Detection of over 30 CMS</li>
+  <li>Drupal version detection</li>
+  <li>Advanced Wordpress Scans
+    <ul>
+      <li>Detects Version</li>
+      <li>User Enumeration</li>
+      <li>Plugins Enumeration</li>
+      <li>Theme Enumeration</li>
+      <li>Detects Users (3 Detection Methods)</li>
+      <li>Looks for Version Vulnerabilities and much more!</li>
+    </ul>
+  </li>
+  <li>Advanced Joomla Scans
+    <ul>
+      <li>Version detection</li>
+      <li>Backup files finder</li>
+      <li>Admin page finder</li>
+      <li>Core vulnerability detection</li>
+      <li>Directory listing check</li>
+      <li>Config leak detection</li>
+      <li>Various other checks</li>
+    </ul>
+  </li>
+  <li>Modular bruteforce system
+    <ul>
+      <li>Use pre made bruteforce modules or create your own and integrate with it</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="requirements-and-compatibility">Requirements and Compatibility:</h2>
+<p>CMSeeK is built using <strong>python3</strong>, you will need python3 to run this tool and is compitable with <strong>unix based systems</strong> as of now. Windows support will be added later. CMSeeK relies on <strong>git</strong> for auto-update so make sure git is installed.</p>
+
+<h2 id="installation-and-usage">Installation and Usage:</h2>
+<p>It is fairly easy to use CMSeeK, just make sure you have python3 and git (just for cloning the repo) installed and use the following commands:</p>
+
+<ul>
+  <li>git clone <code class="highlighter-rouge">https://github.com/Tuhinshubhra/CMSeeK</code></li>
+  <li>cd CMSeeK</li>
+</ul>
+
+<p>For guided scanning:</p>
+
+<ul>
+  <li>python3 cmseek.py</li>
+</ul>
+
+<p>Else:</p>
+
+<ul>
+  <li>python3 cmseek.py -u <target_url> [...]</target_url></li>
+</ul>
+
+<p>Help menu from the program:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USAGE:
+       python3 cmseek.py (for a guided scanning) OR
+       python3 cmseek.py [OPTIONS] &lt;Target Specification&gt;
+
+SPECIFING TARGET:
+      -u URL, --url URL            Target Url
+      -l LIST, -list LIST          path of the file containing list of sites
+                                   for multi-site scan (comma separated)
+
+USER AGENT:
+      -r, --random-agent           Use a random user agent
+      --user-agent USER_AGENT      Specify custom user agent
+
+OUTPUT:
+      -v, --verbose                Increase output verbosity
+
+VERSION &amp; UPDATING:
+      --update                     Update CMSeeK (Requires git)
+      --version                    Show CMSeeK version and exit
+
+HELP &amp; MISCELLANEOUS:
+      -h, --help                   Show this help message and exit
+      --clear-result               Delete all the scan result
+
+EXAMPLE USAGE:
+      python3 cmseek.py -u example.com                           # Scan example.com
+      python3 cmseek.py -l /home/user/target.txt                 # Scan the sites specified in target.txt (comma separated)
+      python3 cmseek.py -u example.com --user-agent Mozilla 5.0  # Scan example.com using custom user-Agent Mozilla is 5.0 used here
+      python3 cmseek.py -u example.com --random-agent            # Scan example.com using a random user-Agent
+      python3 cmseek.py -v -u example.com                        # enabling verbose output while scanning example.com
+</code></pre></div></div>
+
+<h2 id="checking-for-update">Checking For Update:</h2>
+<p>You can check for update either from the main menu or use <code class="highlighter-rouge">python3 cmseek.py --update</code> to check for update and apply auto update.</p>
+
+<p>P.S: Please make sure you have <code class="highlighter-rouge">git</code> installed, CMSeeK uses git to apply auto update.</p>
+
+<h2 id="detection-methods">Detection Methods:</h2>
+<p>CMSeek detects CMS via the following:</p>
+<ul>
+  <li>HTTP Headers</li>
+  <li>Generator meta tag</li>
+  <li>Page source code</li>
+  <li>robots.txt</li>
+</ul>
+
+<h2 id="supported-cmss">Supported CMSs:</h2>
+<p>CMSeeK currently can detect <strong>40</strong> CMSs, you can find the list on <a href="https://github.com/Tuhinshubhra/CMSeeK/blob/master/cmseekdb/cmss.py">cmss.py</a> file which is present in the <code class="highlighter-rouge">cmseekdb</code> directory.
+All the cmss are stored in the following way:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cmsID = {
+   'name':'Name Of CMS',
+   'url':'Official URL of the CMS',
+   'vd':'Version Detection (0 for no, 1 for yes)',
+   'deeps':'Deep Scan (0 for no 1 for yes)'
+ }
+</code></pre></div></div>
+
+<h2 id="scan-result">Scan Result:</h2>
+<p>All of your scan results are stored in a json file named <code class="highlighter-rouge">cms.json</code>, you can find the logs inside the <code class="highlighter-rouge">Result\&lt;Target Site&gt;</code> directory, and as of the bruteforce results they’re stored in a txt file under the site’s result directory as well.</p>
+
+<p>Here is an example of the json report log:</p>
+
+<p><img src="https://i.imgur.com/5dA9jQg.png" alt="Json Log" /></p>
+
+<h2 id="bruteforce-modules">Bruteforce Modules:</h2>
+<p>CMSeek has a modular bruteforce system meaning you can add your custom made bruteforce modules to work with cmseek. A proper documentation for creating modules will be created shortly but in case you already figured out how to (pretty easy once you analyze the pre-made modules) all you need to do is this:</p>
+
+<ol>
+  <li>
+    <p>Add a comment exactly like this <code class="highlighter-rouge"># &lt;Name Of The CMS&gt; Bruteforce module</code>. This will help CMSeeK to know the name of the CMS using regex</p>
+  </li>
+  <li>
+    <p>Add another comment <code class="highlighter-rouge">### cmseekbruteforcemodule</code>, this will help CMSeeK to know it is a module</p>
+  </li>
+  <li>
+    <p>Copy and paste the module in the <code class="highlighter-rouge">brutecms</code> directory under CMSeeK’s directory</p>
+  </li>
+  <li>
+    <p>Open CMSeeK and Rebuild Cache using <code class="highlighter-rouge">U</code> as the input in the first menu.</p>
+  </li>
+  <li>
+    <p>If everything is done right you’ll see something like this (refer to screenshot below) and your module will be listed in bruteforce menu the next time you open CMSeeK.</p>
+  </li>
+</ol>
+
+<p align="center">
+  <img alt="Cache Rebuild Screenshot" width="400px" src="https://i.imgur.com/2Brl7pl.png" />
+</p>
+
+<h2 id="need-more-reasons-to-use-cmseek">Need More Reasons To Use CMSeeK?</h2>
+<p>If not anything you can always enjoy exiting CMSeeK <em>(please don’t)</em>, it will bid you goodbye in a random goodbye message in various languages.</p>
+
+<p>Also you can try reading comments in the code those are pretty random and weird!!!</p>
+
+<h2 id="screenshots">Screenshots:</h2>
+
+<p align="center">
+  <img alt="Main Menu" width="600px" src="https://i.imgur.com/KdRSYzP.png" />
+  <br /><em>Main Menu</em><br />
+  <img alt="Scan Result" width="600px" src="https://i.imgur.com/yiKQoZw.png" />
+  <br /><em>Scan Result</em><br />
+  <img alt="WordPress Scan Result" width="600px" src="https://i.imgur.com/CK4O1Yd.png" />
+  <br /><em>WordPress Scan Result</em><br />
+</p>
+
+<h2 id="opening-issue">Opening issue:</h2>
+<p>Please make sure you have the following info attached when opening a new issue:</p>
+<ul>
+  <li>Target</li>
+  <li>Exact copy of error or screenshot of error</li>
+  <li>Your operating system</li>
+</ul>
+
+<p><strong>Issues without these informations might not be answered!</strong></p>
+
+<h2 id="disclaimer">Disclaimer:</h2>
+<p><strong>Usage of CMSeeK for testing or exploiting websites without prior mutual consistency can be considered as an illegal activity. It is the final user’s responsibility to obey all applicable local, state and federal laws. Authors assume no liability and are not responsible for any misuse or damage caused by this program.</strong></p>
+
+<h2 id="license">License:</h2>
+<p>CMSeeK is licensed under <a href="https://github.com/Tuhinshubhra/CMSeeK/blob/master/LICENSE">GNU General Public License v3.0</a></p>
+
+<h2 id="follow-me-r3dhax0r">Follow Me @r3dhax0r:</h2>
+<p><a href="https://twitter.com/r3dhax0r">Twitter</a>    ||    <a href="https://fb.com/r3dhax0r">Facebook</a>    ||    <a href="https://instagram.com/r3dhax0r">Instagram</a></p>
+
+<h2 id="team">Team:</h2>
+<p><a href="https://twitter.com/virtuallyunvoid">Team : Virtually Unvoid Defensive (VUD)</a></p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page 
+             -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                
+                    
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/images/tuhin.jpg" alt="red-haxor" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/red-haxor">Tuhin Subhra</a></h4>
+                                
+                                    <p>A cyber security enthusiast and a developer associated with web-application security.</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/red-haxor">Read More</a>
+                        </div>
+                    
+                
+                    
+                
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. 
+             -->
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Virtually Unvoid Defensive | Blog &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/documentation/">Documentation</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/releasing-the-uboat-documentation">UBoat Documentation</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/documentation/">
+                                
+                                    See all 1 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/coding-this-stuff-up">
+                <div class="post-card-image" style="background-image: url(/assets/images/bs.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/coding-this-stuff-up">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Networking</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Coding This Stuff Up</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p><h3 id="wtf-is-all-this">Wtf is all this?</h3> <p>Well this trash stuff is the result of mine 3 continuous days with least possible amount of rest.</p> <h3 id="why-are-u-doing-this">Why are u doing this?</h3> <p>Tough question to answer,...</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/tid.jpg" alt="The Infected Drake" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/theinfecteddrake/">The Infected Drake</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/learning-to-code">
+                <div class="post-card-image" style="background-image: url(/assets/images/program.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/learning-to-code">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Beginner-series</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Learning to Code</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    <p><h3 id="this-is-just-a-dummy-post-to-fill-space-up-">This is just a dummy post to fill space up ;)</h3> <h2 id="getting-started">Getting Started</h2> <p>Today we will learn about <strong>coding</strong> a post. The official style is markdown, and you will never have...</p>
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/tid.jpg" alt="The Infected Drake" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/theinfecteddrake/">The Infected Drake</a>
+                        </span>
+                    
+                
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://www.vudefensive.ml">
+            
+                <img src="/assets/images/favicon.ico" alt="Virtually Unvoid Defensive | Blog icon" />
+            
+            <span>Virtually Unvoid Defensive | Blog</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">CMSeek Documentation</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Love this? Share the happiness! ➲</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=CMSeek+Documentation&amp;url=https://vudefensive.ml/releasing-the-cmseek-documentation"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <i class="icon-twitter"></i>
+        </a> <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://vudefensive.ml/releasing-the-cmseek-documentation"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <i class="icon-facebook"></i>
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <nav class="site-footer-nav">
+                    <a href="https://facebook.com/virtuallyunvoiddefensive" target="_blank" title="Facebook" rel="noopener"><i class="icon-facebook"></i> Facebook</a>
+                    <a href="https://www.youtube.com/channel/UCKxkXXtsQ96VRwO-LjXt3Kg" target="_blank" title="YouTube"><i class="icon-youtube"></i> YouTube</a>
+                    <a href="https://github.com/virtuallyud" target="_blank" title="GitHub" rel="noopener"><i class="icon-github"></i> GitHub</a>
+                    <a href="https://twitter.com/virtuallyunvoid" target="_blank" title="Twitter" rel="noopener"><i class="icon-twitter"></i> Twitter</a>
+                    <a href="mailto:biprodeep@gmail.com" target="_blank" title="Email Us!" rel="noopener"><i class="icon-email"></i> Mail Us</a>
+                </nav>
+                <section class="copyright"><a href="http://localhost:4000/">Virtually Unvoid Defensive | Blog</a> &copy;       2018
+                </section>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content 
+     -->
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'false', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

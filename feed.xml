@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-16T10:41:57+05:30</updated><id>http://localhost:4000/</id><title type="html">Virtually Unvoid Defensive | Blog</title><subtitle>Picky Tutorials, Research Writeups, Documentations, PoCs and much more...</subtitle><entry><title type="html">System Exploitation Stuff</title><link href="http://localhost:4000/binary-exploitation-stuffs" rel="alternate" type="text/html" title="System Exploitation Stuff" /><published>2018-08-13T17:30:00+05:30</published><updated>2018-08-13T17:30:00+05:30</updated><id>http://localhost:4000/binary-exploitation-stuffs</id><content type="html" xml:base="http://localhost:4000/binary-exploitation-stuffs">&lt;h3 id=&quot;hi-i-am-shivam&quot;&gt;Hi, I am Shivam&lt;/h3&gt;
+
+&lt;p&gt;Yep I am Shivam and thats who I am. I am a system exploitation master with genuine skills in Binary Exploitation and some other stuff.&lt;/p&gt;
+
+&lt;p&gt;Below are some links here to pro articles which I have posted:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ret2rop.com/2018/08/return-to-plt-got-to-bypass-aslr-remote.html&quot;&gt;Return to PLT, GOT to bypass ASLR remotely&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ret2rop.com/2018/08/format-string-defeating-stack-canary-nx-aslr-remote.html&quot;&gt; Format String Exploits: Defeating Stack Canary, NX and ASLR Remotely on 64 bit&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ret2rop.com/2018/08/make-stack-executable-again.html&quot;&gt; Make Stack Executable again &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ret2rop.com/2018/08/can-we-bruteforce-aslr.html&quot;&gt; Can we bruteforce ASLR ? &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A sample dump:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gdb-peda$ checksec
+CANARY    : disabled
+FORTIFY   : disabled
+NX        : ENABLED
+PIE       : disabled
+RELRO     : Partial
+gdb-peda$ r aa 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d02301671
+Starting program: /home/archer/test/backup aa 45fac180e9eee72f4fd
+
+
+
+             ____________________________________________________
+            /                                                    \
+           |    _____________________________________________     |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |             Secure Backup v1.0              |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |                                             |    |
+           |   |_____________________________________________|    |
+           |                                                      |
+            \_____________________________________________________/
+                   \_______________________________________/
+                _______________________________________________
+             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_
+          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_
+       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_
+    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_
+ _-'.-.-.-.-.-. .---.-. .-----------------------------. .-.---. .---.-.-.-.`-_
+:-----------------------------------------------------------------------------:
+`---._.-----------------------------------------------------------------._.---'
+
+
+ [+] Validated access token
+ [+] Starting archiving Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac
+
+Program received signal SIGSEGV, Segmentation fault.
+[----------------------------------registers-----------------------------------]
+EAX: 0x22b 
+EBX: 0xffffced0 --&amp;gt; 0x4 
+ECX: 0x0 
+EDX: 0xf7f95854 --&amp;gt; 0x0 
+ESI: 0xf7f93e28 --&amp;gt; 0x1ced30 
+EDI: 0xffffce1f --&amp;gt; 0x796500 ('')
+EBP: 0x72413971 ('q9Ar')
+ESP: 0xffffbdf0 (&quot;Ar2A&quot;)
+EIP: 0x31724130 ('0Ar1')
+EFLAGS: 0x10282 (carry parity adjust zero SIGN trap INTERRUPT direction overflow)
+[-------------------------------------code-------------------------------------]
+Invalid $PC address: 0x31724130
+[------------------------------------stack-------------------------------------]
+0000| 0xffffbdf0 (&quot;Ar2A&quot;)
+0004| 0xffffbdf4 --&amp;gt; 0x8049e00 (&quot;V6paNLWrcLwokdPJeCIrUbn+C9TesqoaaXASnicAAAAAA==&quot;)
+0008| 0xffffbdf8 --&amp;gt; 0x804d570 --&amp;gt; 0xfbad2498 
+0012| 0xffffbdfc --&amp;gt; 0x8048a1b (&amp;lt;main+30&amp;gt;: sub    esp,0xc)
+0016| 0xffffbe00 --&amp;gt; 0x0 
+0020| 0xffffbe04 --&amp;gt; 0x0 
+0024| 0xffffbe08 --&amp;gt; 0x0 
+0028| 0xffffbe0c --&amp;gt; 0x0 
+[------------------------------------------------------------------------------]
+Legend: code, data, rodata, value
+Stopped reason: SIGSEGV
+0x31724130 in ?? ()
+$ /opt/metasploit/tools/exploit/pattern_offset.rb -q 31724130
+[*] Exact match at offset 512
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is another dump:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ readelf -a /usr/lib32/libc.so.6 | grep system
+   251: 001265e0   102 FUNC    GLOBAL DEFAULT   13 svcerr_systemerr@@GLIBC_2.0
+   640: 0003c7d0    55 FUNC    GLOBAL DEFAULT   13 __libc_system@@GLIBC_PRIVATE
+  1485: 0003c7d0    55 FUNC    WEAK   DEFAULT   13 system@@GLIBC_2.0
+   565: 00000000     0 FILE    LOCAL  DEFAULT  ABS system.c
+   566: 0003c2b0  1086 FUNC    LOCAL  DEFAULT   13 do_system
+  4988: 001265e0   102 FUNC    LOCAL  DEFAULT   13 __GI_svcerr_systemerr
+  6919: 0003c7d0    55 FUNC    WEAK   DEFAULT   13 system
+  7539: 001265e0   102 FUNC    GLOBAL DEFAULT   13 svcerr_systemerr
+  7602: 0003c7d0    55 FUNC    GLOBAL DEFAULT   13 __libc_system
+$ readelf -a /usr/lib32/libc.so.6 | grep exit  
+  [26] __libc_atexit     PROGBITS        001cd268 1cc268 000004 00  WA  0   0  4
+   03     .tdata .init_array __libc_subfreeres __libc_atexit __libc_thread_subfreeres __libc_IO_vtables .data.rel.ro .dynamic .got .data .bss 
+   09     .tdata .init_array __libc_subfreeres __libc_atexit __libc_thread_subfreeres __libc_IO_vtables .data.rel.ro .dynamic .got 
+001ceeb0  00058d06 R_386_GLOB_DAT    001cf1e4   argp_err_exit_status@@GLIBC_2.1
+001cef9c  00086606 R_386_GLOB_DAT    001cf120   obstack_exit_failure@@GLIBC_2.0
+   116: 0002ff20    39 FUNC    GLOBAL DEFAULT   13 __cxa_at_quick_exit@@GLIBC_2.10
+   144: 0002fb10    33 FUNC    GLOBAL DEFAULT   13 exit@@GLIBC_2.0
+   459: 0002ff50   181 FUNC    GLOBAL DEFAULT   13 __cxa_thread_atexit_impl@@GLIBC_2.18
+   570: 000be685    24 FUNC    GLOBAL DEFAULT   13 _exit@@GLIBC_2.0
+   629: 00129b30    56 FUNC    GLOBAL DEFAULT   13 svc_exit@@GLIBC_2.0
+   [skipped]
+$ strings -t x /usr/lib32/libc.so.6 | grep /bin/sh
+ 17888a /bin/sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;These stuffs look dope as fuck ;)&lt;/p&gt;
+
+&lt;p&gt;Finally filled up much space :).&lt;/p&gt;
+
+&lt;h6 id=&quot;disclaimer&quot;&gt;Disclaimer:&lt;/h6&gt;
+&lt;p&gt;This was all done as a part of testing whether all parts of the CMS has been built successfully. Please do take this stuff as ordinary &lt;code class=&quot;highlighter-rouge&quot;&gt;majak&lt;/code&gt;. :)&lt;/p&gt;</content><author><name>Shivam Shrirao</name></author><category term="binary-exploitation" /><summary type="html">Hi, I am Shivam</summary></entry><entry><title type="html">UBoat Documentation</title><link href="http://localhost:4000/releasing-the-uboat-documentation" rel="alternate" type="text/html" title="UBoat Documentation" /><published>2018-08-12T17:30:00+05:30</published><updated>2018-08-12T17:30:00+05:30</updated><id>http://localhost:4000/releasing-the-uboat-documentation</id><content type="html" xml:base="http://localhost:4000/releasing-the-uboat-documentation">&lt;h1 id=&quot;uboat-http&quot;&gt;UBoat HTTP&lt;/h1&gt;
+
+&lt;p&gt;A POC HTTP Botnet designed to replicate a full weaponised commercial botnet&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://image.ibb.co/m5yi9T/spectral_login.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://img.shields.io/badge/license-MIT-brightgreen.svg&quot; alt=&quot;license&quot; /&gt;
+&lt;img src=&quot;https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg&quot; alt=&quot;awesome&quot; /&gt;
+&lt;img src=&quot;https://img.shields.io/badge/version-0.1.0-lightgrey.svg&quot; alt=&quot;version&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;This project should be used for authorized testing or educational purposes only.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The main objective behind creating this offensive project was to aid security researchers and to enhance the understanding of commercial HTTP loader style botnets . 
+I hope this project helps to contribute to the malware research community and people can develop efficient counter mesures :)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Usage of uboat without prior mutual consistency can be considered as an illegal activity. It is the final user’s responsibility to obey all applicable local, state and federal laws. Authors assume no liability and are not responsible for any misuse or damage caused by this program.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-botnet-&quot;&gt;What is a Botnet ?&lt;/h2&gt;
+
+&lt;p&gt;https://securityaffairs.co/wordpress/13747/cyber-crime/http-botnets-the-dark-side-of-an-standard-protocol.html&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Please don’t bother me asking :)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Coded in C++ with no dependencies&lt;/li&gt;
+  &lt;li&gt;Encrypted C&amp;amp;C Communications&lt;/li&gt;
+  &lt;li&gt;Persistence to prevent your control being lost&lt;/li&gt;
+  &lt;li&gt;Connection Redundancy (Uses a fallback server address or domain )&lt;/li&gt;
+  &lt;li&gt;DDoS methods (TCP &amp;amp; UDP Flood)&lt;/li&gt;
+  &lt;li&gt;Task Creation System ( Altering system HWID,Country,IP,OS.System )&lt;/li&gt;
+  &lt;li&gt;Remote Commands&lt;/li&gt;
+  &lt;li&gt;Update and Uninstall other malware&lt;/li&gt;
+  &lt;li&gt;Download and Execute other malware&lt;/li&gt;
+  &lt;li&gt;Active as well as Passive Keylogger&lt;/li&gt;
+  &lt;li&gt;Enable Windows RDP&lt;/li&gt;
+  &lt;li&gt;Plugin system for easy feature updates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;getting-started-&quot;&gt;Getting started ?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Download the bot from &lt;strong&gt;https://github.com/Souhardya/UBoat/releases&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Download the panel from &lt;strong&gt;https://github.com/Tuhinshubhra/UBoat-Panel/releases&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Follow the wiki at &lt;strong&gt;https://github.com/Souhardya/UBoat/wiki&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;todo--&quot;&gt;TODO :-&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fix minor panel bugs&lt;/li&gt;
+  &lt;li&gt;Make the panel UI sexy&lt;/li&gt;
+  &lt;li&gt;Further develop modules for the bot&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;project-maintained-by&quot;&gt;Project maintained by&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Souhardya Sardar ( Souhardya@protonmail.com)&lt;/li&gt;
+  &lt;li&gt;Tuhinshubhra aka r3dhax0r ( https://github.com/Tuhinshubhra )&lt;/li&gt;
+  &lt;li&gt;Team Virtually Unvoid Defensive ( https://github.com/virtuallyud )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Screens :&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://preview.ibb.co/j7frDo/Screenshot_7.png&quot; alt=&quot;&quot; /&gt; 
+&lt;img src=&quot;https://preview.ibb.co/cwyiR8/Screenshot_8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Circa&lt;/strong&gt; : &lt;strong&gt;2018&lt;/strong&gt;&lt;/p&gt;</content><author><name>Souhardya Sardar</name></author><category term="documentation" /><summary type="html">UBoat HTTP</summary></entry><entry><title type="html">Coding This Stuff Up</title><link href="http://localhost:4000/coding-this-stuff-up" rel="alternate" type="text/html" title="Coding This Stuff Up" /><published>2018-08-11T17:30:00+05:30</published><updated>2018-08-11T17:30:00+05:30</updated><id>http://localhost:4000/coding-this-stuff-up</id><content type="html" xml:base="http://localhost:4000/coding-this-stuff-up">&lt;h3 id=&quot;wtf-is-all-this&quot;&gt;Wtf is all this?&lt;/h3&gt;
+
+&lt;p&gt;Well this trash stuff is the result of mine 3 continuous days with least possible amount of rest.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-are-u-doing-this&quot;&gt;Why are u doing this?&lt;/h3&gt;
+
+&lt;p&gt;Tough question to answer, but I guess it is all because I was assigned to do a task of setting up a website by Biproda. And to keep my word, prove my worth to be a part of the team and most importantly to learn, I am doing all these stuff. And trust me, my knowledge in web development maybe increased a 10x times from the time i had started coding up this website.&lt;/p&gt;
+
+&lt;h3 id=&quot;wait-what&quot;&gt;Wait, what?&lt;/h3&gt;
+
+&lt;p&gt;Yep, i had already started coding for my former team last December but after 2 months, the project got stagnated after my team member deserted me. But I never wanted my 2 weeks of toil to go waste. maybe thats another reason why i proposed setting up all this stuff. :’).&lt;/p&gt;
+
+&lt;p&gt;Oh and btw, you gotta know something, this blog was a part of a Jekyll theme. The CMS wasn’t coded by me. However significant changes have been made here. you can take a look at the sources and the differences between them. :’) i added support for purple theme (trust me that was heck doing that, i had to manually go through unreadable lines of source codes under &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/built/.css&lt;/code&gt; and modding every occurance of a different theme color/style interface), added authors, different tags, and modded some other stuff like &lt;code class=&quot;highlighter-rouge&quot;&gt;truncation limit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;overflow specs&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;error init pages&lt;/code&gt; and other stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-did-you-learn&quot;&gt;What did you learn?&lt;/h3&gt;
+
+&lt;p&gt;Lots mate, lots. I learnt coding a custom CMS wasn’t that hard. You just gotta keep learning. And maybe that is going to be my next project… &lt;strong&gt;MAYBE&lt;/strong&gt;, A Custom CMS with proprietry features. Sure enough if it comes up, it gotta be open-source. Baice. :)&lt;/p&gt;
+
+&lt;p&gt;Also while going through the modular structure, i discovered some bugs,&lt;/p&gt;
+
+&lt;h4 id=&quot;how-easy-was-this&quot;&gt;How easy was this?&lt;/h4&gt;
+
+&lt;p&gt;Trust me, many of you think that modding an open-source blog is just easy af, but trust me it isnt. there are thousands of areas where you wouldn’t want to agree with the already present modules.&lt;/p&gt;
+
+&lt;h4 id=&quot;am-i-am-a-pro-then&quot;&gt;Am I am a pro, then?&lt;/h4&gt;
+
+&lt;p&gt;No shit Sherlock, I are nothing. There is a hell world to learn.&lt;/p&gt;</content><author><name>The Infected Drake</name></author><category term="networking" /><summary type="html">Wtf is all this?</summary></entry><entry><title type="html">CMSeek Documentation</title><link href="http://localhost:4000/releasing-the-cmseek-documentation" rel="alternate" type="text/html" title="CMSeek Documentation" /><published>2018-08-10T17:30:00+05:30</published><updated>2018-08-10T17:30:00+05:30</updated><id>http://localhost:4000/releasing-the-cmseek-documentation</id><content type="html" xml:base="http://localhost:4000/releasing-the-cmseek-documentation">&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;https://i.imgur.com/n2U6nVH.png&quot; alt=&quot;Logo&quot; /&gt; &lt;br /&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/Version-1.0.7-brightgreen.svg?style=style=flat-square&quot; alt=&quot;version&quot; /&gt;
+  &lt;img src=&quot;https://img.shields.io/badge/python-3-orange.svg?style=style=flat-square&quot; alt=&quot;Python Version&quot; /&gt;
+  &lt;img src=&quot;https://img.shields.io/aur/license/yaourt.svg?style=style=flat-square&quot; alt=&quot;License&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-a-cms&quot;&gt;What is a CMS?&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;A content management system (CMS) manages the creation and modification of digital content. It typically supports multiple users in a collaborative environment. Some noteable examples are: &lt;em&gt;WordPress, Joomla, Drupal etc&lt;/em&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;release-history&quot;&gt;Release History&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- Version 1.0.7 [07-08-2018]
+- Version 1.0.6 [23-07-2018]
+- Version 1.0.5 [19-07-2018]
+- Version 1.0.4 [17-07-2018]
+- Version 1.0.3 [06-07-2018]
+- Version 1.0.2 [06-07-2018]
+- Version 1.0.1 [19-06-2018]
+- Version 1.0.0 [15-06-2018]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Tuhinshubhra/CMSeeK/blob/master/CHANGELOG&quot;&gt;Changelog File&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;functions-of-cmseek&quot;&gt;Functions Of CMSeek:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Basic CMS Detection of over 30 CMS&lt;/li&gt;
+  &lt;li&gt;Drupal version detection&lt;/li&gt;
+  &lt;li&gt;Advanced Wordpress Scans
+    &lt;ul&gt;
+      &lt;li&gt;Detects Version&lt;/li&gt;
+      &lt;li&gt;User Enumeration&lt;/li&gt;
+      &lt;li&gt;Plugins Enumeration&lt;/li&gt;
+      &lt;li&gt;Theme Enumeration&lt;/li&gt;
+      &lt;li&gt;Detects Users (3 Detection Methods)&lt;/li&gt;
+      &lt;li&gt;Looks for Version Vulnerabilities and much more!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Advanced Joomla Scans
+    &lt;ul&gt;
+      &lt;li&gt;Version detection&lt;/li&gt;
+      &lt;li&gt;Backup files finder&lt;/li&gt;
+      &lt;li&gt;Admin page finder&lt;/li&gt;
+      &lt;li&gt;Core vulnerability detection&lt;/li&gt;
+      &lt;li&gt;Directory listing check&lt;/li&gt;
+      &lt;li&gt;Config leak detection&lt;/li&gt;
+      &lt;li&gt;Various other checks&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Modular bruteforce system
+    &lt;ul&gt;
+      &lt;li&gt;Use pre made bruteforce modules or create your own and integrate with it&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;requirements-and-compatibility&quot;&gt;Requirements and Compatibility:&lt;/h2&gt;
+&lt;p&gt;CMSeeK is built using &lt;strong&gt;python3&lt;/strong&gt;, you will need python3 to run this tool and is compitable with &lt;strong&gt;unix based systems&lt;/strong&gt; as of now. Windows support will be added later. CMSeeK relies on &lt;strong&gt;git&lt;/strong&gt; for auto-update so make sure git is installed.&lt;/p&gt;
+
+&lt;h2 id=&quot;installation-and-usage&quot;&gt;Installation and Usage:&lt;/h2&gt;
+&lt;p&gt;It is fairly easy to use CMSeeK, just make sure you have python3 and git (just for cloning the repo) installed and use the following commands:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;git clone &lt;code class=&quot;highlighter-rouge&quot;&gt;https://github.com/Tuhinshubhra/CMSeeK&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;cd CMSeeK&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For guided scanning:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;python3 cmseek.py&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Else:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;python3 cmseek.py -u &lt;target_url&gt; [...]&lt;/target_url&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Help menu from the program:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;USAGE:
+       python3 cmseek.py (for a guided scanning) OR
+       python3 cmseek.py [OPTIONS] &amp;lt;Target Specification&amp;gt;
+
+SPECIFING TARGET:
+      -u URL, --url URL            Target Url
+      -l LIST, -list LIST          path of the file containing list of sites
+                                   for multi-site scan (comma separated)
+
+USER AGENT:
+      -r, --random-agent           Use a random user agent
+      --user-agent USER_AGENT      Specify custom user agent
+
+OUTPUT:
+      -v, --verbose                Increase output verbosity
+
+VERSION &amp;amp; UPDATING:
+      --update                     Update CMSeeK (Requires git)
+      --version                    Show CMSeeK version and exit
+
+HELP &amp;amp; MISCELLANEOUS:
+      -h, --help                   Show this help message and exit
+      --clear-result               Delete all the scan result
+
+EXAMPLE USAGE:
+      python3 cmseek.py -u example.com                           # Scan example.com
+      python3 cmseek.py -l /home/user/target.txt                 # Scan the sites specified in target.txt (comma separated)
+      python3 cmseek.py -u example.com --user-agent Mozilla 5.0  # Scan example.com using custom user-Agent Mozilla is 5.0 used here
+      python3 cmseek.py -u example.com --random-agent            # Scan example.com using a random user-Agent
+      python3 cmseek.py -v -u example.com                        # enabling verbose output while scanning example.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;checking-for-update&quot;&gt;Checking For Update:&lt;/h2&gt;
+&lt;p&gt;You can check for update either from the main menu or use &lt;code class=&quot;highlighter-rouge&quot;&gt;python3 cmseek.py --update&lt;/code&gt; to check for update and apply auto update.&lt;/p&gt;
+
+&lt;p&gt;P.S: Please make sure you have &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; installed, CMSeeK uses git to apply auto update.&lt;/p&gt;
+
+&lt;h2 id=&quot;detection-methods&quot;&gt;Detection Methods:&lt;/h2&gt;
+&lt;p&gt;CMSeek detects CMS via the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTTP Headers&lt;/li&gt;
+  &lt;li&gt;Generator meta tag&lt;/li&gt;
+  &lt;li&gt;Page source code&lt;/li&gt;
+  &lt;li&gt;robots.txt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;supported-cmss&quot;&gt;Supported CMSs:&lt;/h2&gt;
+&lt;p&gt;CMSeeK currently can detect &lt;strong&gt;40&lt;/strong&gt; CMSs, you can find the list on &lt;a href=&quot;https://github.com/Tuhinshubhra/CMSeeK/blob/master/cmseekdb/cmss.py&quot;&gt;cmss.py&lt;/a&gt; file which is present in the &lt;code class=&quot;highlighter-rouge&quot;&gt;cmseekdb&lt;/code&gt; directory.
+All the cmss are stored in the following way:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; cmsID = {
+   'name':'Name Of CMS',
+   'url':'Official URL of the CMS',
+   'vd':'Version Detection (0 for no, 1 for yes)',
+   'deeps':'Deep Scan (0 for no 1 for yes)'
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;scan-result&quot;&gt;Scan Result:&lt;/h2&gt;
+&lt;p&gt;All of your scan results are stored in a json file named &lt;code class=&quot;highlighter-rouge&quot;&gt;cms.json&lt;/code&gt;, you can find the logs inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;Result\&amp;lt;Target Site&amp;gt;&lt;/code&gt; directory, and as of the bruteforce results they’re stored in a txt file under the site’s result directory as well.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of the json report log:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/5dA9jQg.png&quot; alt=&quot;Json Log&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bruteforce-modules&quot;&gt;Bruteforce Modules:&lt;/h2&gt;
+&lt;p&gt;CMSeek has a modular bruteforce system meaning you can add your custom made bruteforce modules to work with cmseek. A proper documentation for creating modules will be created shortly but in case you already figured out how to (pretty easy once you analyze the pre-made modules) all you need to do is this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add a comment exactly like this &lt;code class=&quot;highlighter-rouge&quot;&gt;# &amp;lt;Name Of The CMS&amp;gt; Bruteforce module&lt;/code&gt;. This will help CMSeeK to know the name of the CMS using regex&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add another comment &lt;code class=&quot;highlighter-rouge&quot;&gt;### cmseekbruteforcemodule&lt;/code&gt;, this will help CMSeeK to know it is a module&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy and paste the module in the &lt;code class=&quot;highlighter-rouge&quot;&gt;brutecms&lt;/code&gt; directory under CMSeeK’s directory&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open CMSeeK and Rebuild Cache using &lt;code class=&quot;highlighter-rouge&quot;&gt;U&lt;/code&gt; as the input in the first menu.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If everything is done right you’ll see something like this (refer to screenshot below) and your module will be listed in bruteforce menu the next time you open CMSeeK.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Cache Rebuild Screenshot&quot; width=&quot;400px&quot; src=&quot;https://i.imgur.com/2Brl7pl.png&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;need-more-reasons-to-use-cmseek&quot;&gt;Need More Reasons To Use CMSeeK?&lt;/h2&gt;
+&lt;p&gt;If not anything you can always enjoy exiting CMSeeK &lt;em&gt;(please don’t)&lt;/em&gt;, it will bid you goodbye in a random goodbye message in various languages.&lt;/p&gt;
+
+&lt;p&gt;Also you can try reading comments in the code those are pretty random and weird!!!&lt;/p&gt;
+
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots:&lt;/h2&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img alt=&quot;Main Menu&quot; width=&quot;600px&quot; src=&quot;https://i.imgur.com/KdRSYzP.png&quot; /&gt;
+  &lt;br /&gt;&lt;em&gt;Main Menu&lt;/em&gt;&lt;br /&gt;
+  &lt;img alt=&quot;Scan Result&quot; width=&quot;600px&quot; src=&quot;https://i.imgur.com/yiKQoZw.png&quot; /&gt;
+  &lt;br /&gt;&lt;em&gt;Scan Result&lt;/em&gt;&lt;br /&gt;
+  &lt;img alt=&quot;WordPress Scan Result&quot; width=&quot;600px&quot; src=&quot;https://i.imgur.com/CK4O1Yd.png&quot; /&gt;
+  &lt;br /&gt;&lt;em&gt;WordPress Scan Result&lt;/em&gt;&lt;br /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;opening-issue&quot;&gt;Opening issue:&lt;/h2&gt;
+&lt;p&gt;Please make sure you have the following info attached when opening a new issue:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Target&lt;/li&gt;
+  &lt;li&gt;Exact copy of error or screenshot of error&lt;/li&gt;
+  &lt;li&gt;Your operating system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Issues without these informations might not be answered!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Usage of CMSeeK for testing or exploiting websites without prior mutual consistency can be considered as an illegal activity. It is the final user’s responsibility to obey all applicable local, state and federal laws. Authors assume no liability and are not responsible for any misuse or damage caused by this program.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License:&lt;/h2&gt;
+&lt;p&gt;CMSeeK is licensed under &lt;a href=&quot;https://github.com/Tuhinshubhra/CMSeeK/blob/master/LICENSE&quot;&gt;GNU General Public License v3.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;follow-me-r3dhax0r&quot;&gt;Follow Me @r3dhax0r:&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/r3dhax0r&quot;&gt;Twitter&lt;/a&gt;    ||    &lt;a href=&quot;https://fb.com/r3dhax0r&quot;&gt;Facebook&lt;/a&gt;    ||    &lt;a href=&quot;https://instagram.com/r3dhax0r&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;team&quot;&gt;Team:&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/virtuallyunvoid&quot;&gt;Team : Virtually Unvoid Defensive (VUD)&lt;/a&gt;&lt;/p&gt;</content><author><name>Tuhin Subhra</name></author><category term="documentation" /><summary type="html"></summary></entry><entry><title type="html">Learning to Code</title><link href="http://localhost:4000/learning-to-code" rel="alternate" type="text/html" title="Learning to Code" /><published>2018-08-05T17:30:00+05:30</published><updated>2018-08-05T17:30:00+05:30</updated><id>http://localhost:4000/learning-to-code</id><content type="html" xml:base="http://localhost:4000/learning-to-code">&lt;h3 id=&quot;this-is-just-a-dummy-post-to-fill-space-up-&quot;&gt;This is just a dummy post to fill space up ;)&lt;/h3&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Today we will learn about &lt;strong&gt;coding&lt;/strong&gt; a post. The official style is markdown, and you will never have a perfect database to look upon while you write, so thats when jekyll came handy. I love doing stuffs like this, especially coding stuffs, and i believe this will grow on a regular basis.&lt;/p&gt;
+
+&lt;h3 id=&quot;features&quot;&gt;Features:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A shitpost.&lt;/li&gt;
+  &lt;li&gt;Short and precise.&lt;/li&gt;
+  &lt;li&gt;Evalangle free.&lt;/li&gt;
+  &lt;li&gt;Demo for dummy.&lt;/li&gt;
+  &lt;li&gt;Get shit done.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;live_life():
+	job.OnProcessExecution('Eat')
+	job.OnProcessExecution('Breathe')
+	job.OnProcessExecution('Code')
+	job.OnProcessExecution('Sleep')
+
+do:
+	live_life()
+while(alive):
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Filled space with trash :p&lt;/p&gt;</content><author><name>The Infected Drake</name></author><category term="beginner-series" /><summary type="html">This is just a dummy post to fill space up ;)</summary></entry><entry><title type="html">Lets Boot Up This Blog</title><link href="http://localhost:4000/lets-boot-this-blog-up" rel="alternate" type="text/html" title="Lets Boot Up This Blog" /><published>2018-08-01T17:30:00+05:30</published><updated>2018-08-01T17:30:00+05:30</updated><id>http://localhost:4000/lets-boot-this-blog-up</id><content type="html" xml:base="http://localhost:4000/lets-boot-this-blog-up">&lt;h3 id=&quot;power-switch&quot;&gt;Power Switch:&lt;/h3&gt;
+
+&lt;p&gt;Many of you reading this first post of the blog’d know me still let me make an informal introduction of myself - of course in my own way. 😛&lt;/p&gt;
+
+&lt;h3 id=&quot;bios&quot;&gt;BIOS:&lt;/h3&gt;
+
+&lt;p&gt;I’m Biprodeep Roy, a computer geek, cyber security hobbist, science addict, nature lover, music creator and a logical spiritualist (in which nationalism is included 😋). I believe in a perfect balanced between nature and technology where one acts as a constructive conjugate to another.  PS: Just know me as your regular seriously sarcastic guy. 😜&lt;/p&gt;
+
+&lt;h3 id=&quot;preboot-loader&quot;&gt;Preboot Loader:&lt;/h3&gt;
+
+&lt;p&gt;I was introduced into programming when I was 8 years old (don’t worry just some LOGO and GWBasic sh!t 😛 ). Then by the time I was 11, I could code basics in Q-Basic, VB and C and then eventually C++/VAJA/blah-blah as the years went by . . .&lt;/p&gt;
+
+&lt;h3 id=&quot;boot-loader&quot;&gt;Boot Loader:&lt;/h3&gt;
+
+&lt;p&gt;Previously till 15, I was more interested in physics than in Computer Science (CS) although I kept learning more in both of the subjects. Oh BTW - I was introduced to Linux when I was 13 - let me tell you this story in brief. I had just joined my first computer tutor and he was a researcher in CS at Indian Statistical Institute (ISI). He used to use Ubuntu for his daily chores, and by that time I was already curious about computers so used to wonder what OS it was - because it looked different. One fine day I asked him the name of the OS and he was like, “ Its ‘OOOBooNTTu’ nigga”! - I was completely shocked by the name itself and then he said its based on “Linux” and it doesn’t catch “Viiirushes” - that made me way more curious. Those days we didn’t have internet as a regular feature. People generally used to use DialUP BSAN*L modems with sh!tty connections to connect to the Internet. I remember that time we used to have only 1 cyber cafe with slow internet in our region and that too filled with lame kids who wasted it playing GTA ViceCity sh!t. Fortunately my computer sir had an internet connection, so I asked him to give me the installation image for ubuntu and he gave it to me in a CD in which he had burnt it for me. I was only a regular wAnBLoWs guy who used to code and listen to music on an offline PC that was gifted to me by my uncle back when I was 12 years old. Note: I hated and still now hate playing games because it makes me go dizzy. Now when I went and tried installing that Ubuntu - I saw the installer and I was pretty happy because it had the “next” button just like every wANbLoWs software installer “wiZZards”. I gave the installer what it wanted and when selecting partitions I went will clean install without understanding how it works - the installation went smoothly but when I rebooted my PC - to my shock wAnBLoWs disappeared deleting all other data on the machine - I was kinda in a dead state when I had a feeling that I was trapped in a locked room with a hungry beast inside it. But from the next day I started exploring OOOBooNTTu and could find it pretty good. That way I got into Linux and the ignition was done by my sir!&lt;/p&gt;
+
+&lt;h3 id=&quot;kernel&quot;&gt;Kernel:&lt;/h3&gt;
+
+&lt;p&gt;I got into security wondering around and just being a curious n00b. Previously it was hax0ring for me, then it became hacking, then discovering bugs, then innovating methodologies, then security and now its creativity.&lt;/p&gt;
+
+&lt;h3 id=&quot;init-system&quot;&gt;Init System:&lt;/h3&gt;
+
+&lt;p&gt;I had a previous blog when I was around 18 or 19 but that blog eventually died because I didn’t want to maintain it. I was kinda busy in learning new things after that so didn’t find anytime to continue it, and it just got wiped up.&lt;/p&gt;
+
+&lt;h3 id=&quot;runlevel-services&quot;&gt;Runlevel Services:&lt;/h3&gt;
+
+&lt;p&gt;Even now I don’t have time for blogging but with coming days a LOT of people are demanding and requesting blog posts, I will try to squeeze out some time and scribble some sh!t up here, cannot promise that it will be quality stuff always.&lt;/p&gt;
+
+&lt;h3 id=&quot;user-shell&quot;&gt;User Shell:&lt;/h3&gt;
+
+&lt;p&gt;I hope you will enjoy my posts and share them if you like it, also I will be very colloquial and frank with my language, cause I believe in the freedom to express myself freely 😛 ( I do not require to use this as my professional profile cause I have faith in my skills more, than just some scribbling on some temporary page). So, let this blog begin!&lt;/p&gt;</content><author><name>Biprodeep Roy</name></author><category term="beginner-series" /><summary type="html">Power Switch:</summary></entry></feed>
