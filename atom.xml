@@ -8,6 +8,22 @@
     
       
       <item>
+        <title>How To Write Posts Up</title>
+        
+          <description>&lt;p&gt;So this article is based upon how to writeup posts here on this blog.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 19 Aug 2018 12:00:00 +0000</pubDate>
+        <link>
+        http://localhost:4000/how-to-write-posts
+        </link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-write-posts</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>System Exploitation Stuff</title>
         
           <description>&lt;h3 id=&quot;hi-i-am-shivam&quot;&gt;Hi, I am Shivam&lt;/h3&gt;
@@ -16,7 +32,8 @@
         
         <pubDate>Mon, 13 Aug 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/binary-exploitation-stuffs</link>
+        http://localhost:4000/binary-exploitation-stuffs
+        </link>
         <guid isPermaLink="true">http://localhost:4000/binary-exploitation-stuffs</guid>
       </item>
       
@@ -31,7 +48,8 @@
         
         <pubDate>Sun, 12 Aug 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/releasing-the-uboat-documentation</link>
+        http://localhost:4000/releasing-the-uboat-documentation
+        </link>
         <guid isPermaLink="true">http://localhost:4000/releasing-the-uboat-documentation</guid>
       </item>
       
@@ -46,7 +64,8 @@
         
         <pubDate>Sat, 11 Aug 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/coding-this-stuff-up</link>
+        http://localhost:4000/coding-this-stuff-up
+        </link>
         <guid isPermaLink="true">http://localhost:4000/coding-this-stuff-up</guid>
       </item>
       
@@ -66,7 +85,8 @@
         
         <pubDate>Fri, 10 Aug 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/releasing-the-cmseek-documentation</link>
+        http://localhost:4000/releasing-the-cmseek-documentation
+        </link>
         <guid isPermaLink="true">http://localhost:4000/releasing-the-cmseek-documentation</guid>
       </item>
       
@@ -81,7 +101,8 @@
         
         <pubDate>Sun, 05 Aug 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/learning-to-code</link>
+        http://localhost:4000/learning-to-code
+        </link>
         <guid isPermaLink="true">http://localhost:4000/learning-to-code</guid>
       </item>
       
@@ -96,7 +117,8 @@
         
         <pubDate>Wed, 01 Aug 2018 12:00:00 +0000</pubDate>
         <link>
-        http://localhost:4000/lets-boot-this-blog-up</link>
+        http://localhost:4000/lets-boot-this-blog-up
+        </link>
         <guid isPermaLink="true">http://localhost:4000/lets-boot-this-blog-up</guid>
       </item>
       

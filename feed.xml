@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-16T10:41:57+05:30</updated><id>http://localhost:4000/</id><title type="html">Virtually Unvoid Defensive | Blog</title><subtitle>Picky Tutorials, Research Writeups, Documentations, PoCs and much more...</subtitle><entry><title type="html">System Exploitation Stuff</title><link href="http://localhost:4000/binary-exploitation-stuffs" rel="alternate" type="text/html" title="System Exploitation Stuff" /><published>2018-08-13T17:30:00+05:30</published><updated>2018-08-13T17:30:00+05:30</updated><id>http://localhost:4000/binary-exploitation-stuffs</id><content type="html" xml:base="http://localhost:4000/binary-exploitation-stuffs">&lt;h3 id=&quot;hi-i-am-shivam&quot;&gt;Hi, I am Shivam&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-20T14:31:54+05:30</updated><id>http://localhost:4000/</id><title type="html">Virtually Unvoid Defensive | Blog</title><subtitle>Picky Tutorials, Research Writeups, Documentations, PoCs and much more...</subtitle><entry><title type="html">How To Write Posts Up</title><link href="http://localhost:4000/how-to-write-posts" rel="alternate" type="text/html" title="How To Write Posts Up" /><published>2018-08-19T17:30:00+05:30</published><updated>2018-08-19T17:30:00+05:30</updated><id>http://localhost:4000/how-to-write-posts</id><content type="html" xml:base="http://localhost:4000/how-to-write-posts">&lt;p&gt;So this article is based upon how to writeup posts here on this blog.&lt;/p&gt;
+
+&lt;h3 id=&quot;requirements&quot;&gt;Requirements:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Git installed and some knowledge of using &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;A Ruby environment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;follow-the-steps-below-&quot;&gt;Follow the steps below :&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;So first of all head over to Github and clone the repo named &lt;code class=&quot;highlighter-rouge&quot;&gt;generator&lt;/code&gt;. This is the main stuff which is going to help you to write posts up. This is the main posts generator.&lt;/li&gt;
+  &lt;li&gt;Once you have downloaded it, you will need &lt;code class=&quot;highlighter-rouge&quot;&gt;bundler&lt;/code&gt; to install all the dependencies. Oh and don’t forget to update your Ruby. A &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;gem update bundler&lt;/code&gt; will get you the latest version of &lt;code class=&quot;highlighter-rouge&quot;&gt;bundler&lt;/code&gt;. Install the dependencies in the Gemfile via &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;When you are done with dependencies, navigate to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts/&lt;/code&gt; folder within the &lt;code class=&quot;highlighter-rouge&quot;&gt;generator/&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Now here comes the most tricky part of it, &lt;strong&gt;observe the pattern in which the files are named&lt;/strong&gt;. Now when you write up a post, your file has gotta be named in the same pattern &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;date&amp;gt;-&amp;lt;topic_name&amp;gt;&lt;/code&gt;. the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;topic_name&amp;gt;&lt;/code&gt; will be the file name which will appear when the final post has been generated.&lt;/li&gt;
+  &lt;li&gt;Open up any post and &lt;strong&gt;observe the pattern in ehich they are written&lt;/strong&gt;. I purposefully, made this stuff offline since I think online editing and stuff are trash and they offer less moderation to revisions and stuff.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So lets open up the file named &lt;code class=&quot;highlighter-rouge&quot;&gt;2018-08-11-coding-this-stuff-up.md&lt;/code&gt; and lets analyse this properly.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;So take a look at this part within the two &lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;s:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: post
+current: post
+cover: assets/images/bs.jpg
+navigation: True
+title: Coding This Stuff Up
+date: 2018-08-11 12:00:00
+tags: networking
+class: post-template
+subclass: 'post'
+author: theinfecteddrake
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;So this is the main part that fetches the layout-&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; - Defines the layout.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;current&lt;/code&gt; - Tells the generator about the layout.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cover&lt;/code&gt; - Your choice of cover image under &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/images/&lt;/code&gt; directory. Put your own cover photo (preferably of a reasonable resolution) and include the name here.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt; - The title of your post. This will appear as in big letters at top of your post (so choose this wisely). Also note that your post title must be similar to your filename.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;date&lt;/code&gt; - Self explanatoy I guess. Time should &lt;strong&gt;NOT&lt;/strong&gt; be in future (I ran into this problem and had to google the whole internet for fixing it :(.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tags&lt;/code&gt; - An imp. part. You post must be of a specific tag so as to make it discoverable. If you want to view tags, go ahead and navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;_data/tags.yml&lt;/code&gt;. There you can add your own tags (if you wish).&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt; - Your username. To view what username you have, visit &lt;code class=&quot;highlighter-rouge&quot;&gt;_data/authors.yml&lt;/code&gt;, everything is self explanatory there.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h6 id=&quot;note-&quot;&gt;Note:-&lt;/h6&gt;
+&lt;p&gt;Do not change the attributes such as &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;current&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;subclass&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Now comes the main body part, as you can see everything is in markdown (I hope you all are familiar with it ;_;).&lt;/li&gt;
+  &lt;li&gt;Simply straight away start writing into the point. DO NOT write the site title heading again, for it will appear twice (not a good idea).&lt;/li&gt;
+  &lt;li&gt;Finish the article as per your need. ;)&lt;/li&gt;
+  &lt;li&gt;Now here comes an important part. Name your article as per your heading (try to keep it short). and put it in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts/&lt;/code&gt; folder. Make sure your cover image is there in &lt;code class=&quot;highlighter-rouge&quot;&gt;assets/images&lt;/code&gt; folder and the refernce has been made in the &lt;code class=&quot;highlighter-rouge&quot;&gt;cover&lt;/code&gt; attribute. Double check everything for typos and stuff (this is why I preferred this offline).&lt;/li&gt;
+  &lt;li&gt;Now visit the root directory of &lt;code class=&quot;highlighter-rouge&quot;&gt;generator/&lt;/code&gt; folder, open up a terminal and run &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;. This will start your page generation under &lt;code class=&quot;highlighter-rouge&quot;&gt;generated-pages/&lt;/code&gt; directory. Also this will start up a server on port 4000. Visit &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:4000&lt;/code&gt; via browser and take a look at the generated stuff (I mean your post). You can edit the post in your IDE itself (incase you want to) and take a look at the changes wich be automatically loaded into the browser.&lt;/li&gt;
+  &lt;li&gt;Once satisfied, initialise an empty git repo and add the remote location of &lt;code class=&quot;highlighter-rouge&quot;&gt;https://github.com/vudteam/blog&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;generated-pages&lt;/code&gt; folder, then fetch the contents, remove the mixed differences, and set the tracking up to the master branch of the remote repo.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Whatever I told, if doesn’t make sense to you, simply follow these steps after opening a terminal in the &lt;code class=&quot;highlighter-rouge&quot;&gt;generated-pages/&lt;/code&gt; folder. Make sure &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; is updated:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm -rf .git
+git init
+git remote add origin https://github.com/vudteam/blog
+git fetch
+git reset --mixed origin/master
+git branch --set-upstream-to=origin/master master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;-&amp;gt;&lt;/strong&gt; Then commit your file via:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &amp;lt;your filename&amp;gt;
+git commit -m 'Added post'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Push your changes via &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; to the branch. You will be asked for credentials, enter the credentials as given. Your changes will be published on GitHub, and hence on website. ;)&lt;/p&gt;
+
+&lt;p&gt;Thats it! give it some 5 mins. for your changes to come online. Refresh your browser and you will see your article has been added on website!&lt;/p&gt;
+
+&lt;p&gt;I know this is a bit of heck, but this is the only time you will have do this for the setup ONLY ONCE.&lt;/p&gt;
+
+&lt;p&gt;Now next time you write a post:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt; to update your local repo if any other person has added a post.&lt;/li&gt;
+  &lt;li&gt;Start from the commit part denoted by &lt;code class=&quot;highlighter-rouge&quot;&gt;-&amp;gt;&lt;/code&gt;. Add your file, commit it and push.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Congo, you’re are done!&lt;/p&gt;</content><author><name>The Infected Drake</name></author><category term="beginner-series" /><summary type="html">So this article is based upon how to writeup posts here on this blog.</summary></entry><entry><title type="html">System Exploitation Stuff</title><link href="http://localhost:4000/binary-exploitation-stuffs" rel="alternate" type="text/html" title="System Exploitation Stuff" /><published>2018-08-13T17:30:00+05:30</published><updated>2018-08-13T17:30:00+05:30</updated><id>http://localhost:4000/binary-exploitation-stuffs</id><content type="html" xml:base="http://localhost:4000/binary-exploitation-stuffs">&lt;h3 id=&quot;hi-i-am-shivam&quot;&gt;Hi, I am Shivam&lt;/h3&gt;
 
 &lt;p&gt;Yep I am Shivam and thats who I am. I am a system exploitation master with genuine skills in Binary Exploitation and some other stuff.&lt;/p&gt;
 
